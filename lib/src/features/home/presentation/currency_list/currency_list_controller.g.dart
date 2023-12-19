@@ -12,7 +12,7 @@ String _$currencyListControllerHash() =>
 /// See also [CurrencyListController].
 @ProviderFor(CurrencyListController)
 final currencyListControllerProvider = AutoDisposeAsyncNotifierProvider<
-    CurrencyListController, List<InvalidType>>.internal(
+    CurrencyListController, List<Currency>>.internal(
   CurrencyListController.new,
   name: r'currencyListControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,7 +22,7 @@ final currencyListControllerProvider = AutoDisposeAsyncNotifierProvider<
   allTransitiveDependencies: null,
 );
 
-typedef _$CurrencyListController = AutoDisposeAsyncNotifier<List<InvalidType>>;
+typedef _$CurrencyListController = AutoDisposeAsyncNotifier<List<Currency>>;
 String _$getCurrencyControllerHash() =>
     r'f4d93285da91456cd377523310686fa6ed064bf6';
 
@@ -48,10 +48,10 @@ class _SystemHash {
 }
 
 abstract class _$GetCurrencyController
-    extends BuildlessAutoDisposeAsyncNotifier<InvalidType> {
+    extends BuildlessAutoDisposeAsyncNotifier<Currency?> {
   late final String symbol;
 
-  FutureOr<InvalidType> build({
+  FutureOr<Currency?> build({
     required String symbol,
   });
 }
@@ -61,7 +61,7 @@ abstract class _$GetCurrencyController
 const getCurrencyControllerProvider = GetCurrencyControllerFamily();
 
 /// See also [GetCurrencyController].
-class GetCurrencyControllerFamily extends Family<AsyncValue<InvalidType>> {
+class GetCurrencyControllerFamily extends Family<AsyncValue<Currency?>> {
   /// See also [GetCurrencyController].
   const GetCurrencyControllerFamily();
 
@@ -101,7 +101,7 @@ class GetCurrencyControllerFamily extends Family<AsyncValue<InvalidType>> {
 /// See also [GetCurrencyController].
 class GetCurrencyControllerProvider
     extends AutoDisposeAsyncNotifierProviderImpl<GetCurrencyController,
-        InvalidType> {
+        Currency?> {
   /// See also [GetCurrencyController].
   GetCurrencyControllerProvider({
     required String symbol,
@@ -132,7 +132,7 @@ class GetCurrencyControllerProvider
   final String symbol;
 
   @override
-  FutureOr<InvalidType> runNotifierBuild(
+  FutureOr<Currency?> runNotifierBuild(
     covariant GetCurrencyController notifier,
   ) {
     return notifier.build(
@@ -157,7 +157,7 @@ class GetCurrencyControllerProvider
   }
 
   @override
-  AutoDisposeAsyncNotifierProviderElement<GetCurrencyController, InvalidType>
+  AutoDisposeAsyncNotifierProviderElement<GetCurrencyController, Currency?>
       createElement() {
     return _GetCurrencyControllerProviderElement(this);
   }
@@ -177,14 +177,14 @@ class GetCurrencyControllerProvider
 }
 
 mixin GetCurrencyControllerRef
-    on AutoDisposeAsyncNotifierProviderRef<InvalidType> {
+    on AutoDisposeAsyncNotifierProviderRef<Currency?> {
   /// The parameter `symbol` of this provider.
   String get symbol;
 }
 
 class _GetCurrencyControllerProviderElement
     extends AutoDisposeAsyncNotifierProviderElement<GetCurrencyController,
-        InvalidType> with GetCurrencyControllerRef {
+        Currency?> with GetCurrencyControllerRef {
   _GetCurrencyControllerProviderElement(super.provider);
 
   @override
